@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .banner-wrap {
   display: flex;
   justify-content: center;
@@ -91,8 +91,10 @@ export default {
   font-size: 17px;
   font-weight: 400;
 }
-.wrapper /deep/ .el-carousel__indicators--horizontal {
-  bottom: 0px;
+.wrapper {
+  /deep/ .el-carousel__indicators--horizontal {
+    bottom: 0px;
+  }
 }
 img {
   width: 100%;
@@ -123,16 +125,22 @@ img {
   .banner-info {
     top: 260px;
   }
-  .wrapper /deep/ .el-carousel__indicators--horizontal {
-    bottom: 200px;
+  .wrapper {
+    /deep/ .el-carousel__indicators--horizontal {
+      bottom: 200px;
+    }
   }
-  .wrapper /deep/ .el-carousel__arrow {
-    display: block !important;
+  .wrapper {
+    /deep/ .el-carousel__arrow {
+      display: block !important;
+    }
   }
-  .wrapper /deep/ .banner-info h1 {
-    font-size: 30px;
-    line-height: 38px;
-    word-break: keep-all;
+  .wrapper {
+    /deep/ .banner-info h1 {
+      font-size: 30px;
+      line-height: 38px;
+      word-break: keep-all;
+    }
   }
 }
 </style>
