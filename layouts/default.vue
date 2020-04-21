@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-nav></header-nav>
+    <!-- <header-nav></header-nav> -->
     <nuxt />
     <footer-component></footer-component>
   </div>

@@ -1,7 +1,7 @@
 
 export default {
   router: {
-    base: '/nuxt-websit/'
+    base: '/'
   },
   mode: 'universal',
   /*
@@ -11,14 +11,17 @@ export default {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'stylesheet', href: '/reset.css' },
+      { rel: 'stylesheet', href: '/global.css' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'dns-prefetch', href: 'https://img.baitton.com' },
     ],
     script: [
-      { src: "http://api.map.baidu.com/api?v=2.0&ak=9UxhL8yiE89j3ryPL2G25msjPFzTnDGd" }
+      {}
     ]
   },
   /*
@@ -30,8 +33,8 @@ export default {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    '~/assets/css/normalize.css',
-    '~/assets/css/global.css',
+    // '~/assets/css/reset.css',
+    // '~/assets/css/global.css',
     'swiper/dist/css/swiper.css'
   ],
   /*

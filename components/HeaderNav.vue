@@ -1,253 +1,199 @@
 <template>
   <div>
-    <header ref="head">
-      <img :src="logo" />
-      <div class="navBox">
-        <ul>
-          <li>
-            <nuxt-link to="/">首页</nuxt-link>
-          </li>
-          <li class="service">
-            <!-- <nuxt-link to="/a">服务与产品</nuxt-link> -->
-            <el-dropdown>
-              <span class="el-dropdown-link" ref="production">服务与产品</span>
-              <el-dropdown-menu slot="dropdown">
-                <div class="screen" @mousemove="changeHover()" @mouseout="hideHover()">
-                  <div class="service_box">
-                    <img :src="light" />
-                    <div>服务</div>
-                    <el-dropdown-item>
-                      <nuxt-link to="/shortmessage">验证码&通知短信</nuxt-link>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <nuxt-link to="/extension">推广短信</nuxt-link>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <nuxt-link to="/audiocode">语音验证码</nuxt-link>
-                    </el-dropdown-item>
-                  </div>
-                  <div class="production_box">
-                    <img :src="prod" />
-                    <div>服务</div>
-                    <el-dropdown-item>
-                      <nuxt-link to="/cloudplatform">美唐云平台</nuxt-link>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <nuxt-link to="/gateway">SI短信平台</nuxt-link>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <nuxt-link to="/enterprise">ECP企业通信平台</nuxt-link>
-                    </el-dropdown-item>
-                  </div>
-                </div>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </li>
-          <li>
-            <nuxt-link to="/solutioncase">解决方案</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/onlineexperience">在线体验</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/developmentcenter">开发中心</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/aboutme">关于我们</nuxt-link>
-          </li>
+    <header class="header clear">
+      <nav class="navbar" v-show="navshow">
+        <a class="navbar-brand">
+          <img height="32" src="../static/logo.png" />
+          <!-- <img height="32" src="../../assets/image/logo.png" /> -->
+        </a>
+        <ul class="menu clear">
+          <router-link tag="li" to="/" :class="{fff:navindex===0}">首页</router-link>
+          <router-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</router-link>
+          <router-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</router-link>
+          <router-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</router-link>
+          <router-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</router-link>
         </ul>
-        <div class="btnBox">
-          <el-button class="login" @click="login">登录</el-button>
-          <el-button type="warning" class="register" @click="register">注册有礼</el-button>
-        </div>
-      </div>
+        <span class="more" @click="downmenuClick()">
+          <div class="icon-twrap" p-id="599">
+            <svg
+              class="icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="601"
+            >
+              <path
+                d="M925 811H99.5c-12 0.7-23.5-5.3-29.7-15.7-6.2-10.3-6.2-23.3 0-33.6s17.7-16.4 29.7-15.7H925c12-0.7 23.5 5.3 29.7 15.7 6.2 10.3 6.2 23.3 0 33.6-6.3 10.4-17.7 16.4-29.7 15.7zM925 534.7H99.5c-12 0.7-23.5-5.3-29.7-15.7-6.2-10.3-6.2-23.3 0-33.6s17.7-16.4 29.7-15.7H925c12-0.7 23.5 5.3 29.7 15.7 6.2 10.3 6.2 23.3 0 33.6-6.3 10.3-17.7 16.4-29.7 15.7zM925 279.7H99.5c-12 0.7-23.5-5.3-29.7-15.7-6.2-10.3-6.2-23.3 0-33.6s17.7-16.4 29.7-15.7H925c12-0.7 23.5 5.3 29.7 15.7 6.2 10.3 6.2 23.3 0 33.6-6.3 10.3-17.7 16.4-29.7 15.7z"
+                p-id="602"
+              />
+            </svg>
+          </div>
+        </span>
+      </nav>
     </header>
+    <nav class="nav-down" v-show="downmenuShow">
+      <ul class="downmenu clear">
+        <router-link tag="li" to="/" :class="{fff:navindex===0}">首页</router-link>
+        <router-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</router-link>
+        <router-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</router-link>
+        <router-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</router-link>
+        <router-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</router-link>
+      </ul>
+    </nav>
   </div>
 </template>
-
 <script>
 export default {
-  data() {
+  name: 'Nav',
+  data () {
     return {
-      light: "/images/ic_home_fw.png",
-      prod: "/images/ic_home_cp.png",
-      logo: "/images/pic_home_logo.png"
-    };
+      downmenuShow: false,
+      navshow: true,
+      height: 0,
+      timer: null
+    }
   },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+  props: {
+    navindex: Number
   },
+  mounted () {
+  },
+  // created () {
+  //   window.addEventListener('scroll', this.handleScroll)
+  // },
+  // destroyed () {
+  //   window.removeEventListener('scroll', this.handleScroll)
+  // },
   methods: {
-    // 获取高度
-    handleScroll() {
-      const top =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
-      if (top > 102) {
-        this.$refs.head.style.background = "#232323";
-        this.$refs.head.style.opacity = "0.8";
-      } else {
-        this.$refs.head.style.background = "";
-        this.$refs.head.style.opacity = "1";
+    downmenuClick () {
+      this.downmenuShow = !this.downmenuShow
+    },
+    handleScroll (e) {
+      if (this.timer) {
+        clearTimeout(this.timer)
       }
-    },
-    changeHover() {
-      this.$refs.production.style.color = '#fc6b00';
-    },
-    hideHover() {
-      this.$refs.production.style.color = '#fff';
-    },
-    // 点击跳转登录
-    login() {
-      this.$router.push('/login')
-    },
-    // 跳转到注册
-    register() {
-      this.$router.push('/register')
+      this.timer = setTimeout(() => {
+        const top = document.documentElement.scrollTop
+        if (this.height < top) {
+          this.navshow = false
+          this.height = top
+        } else {
+          this.navshow = true
+          this.height = top
+        }
+      }, 50)
     }
   }
-};
+
+}
 </script>
-
-<style lang="scss" scoped>
-$activeColor: #fc6b00;
-@mixin productCss() {
-  div {
-    font-size: 14px;
-    color: #8b8b8b;
-    margin-top: 4px;
-  }
+<style scoped>
+.clear::after {
+  content: "";
+  display: block;
+  clear: both;
 }
-
+.fff {
+  color: #fff !important;
+  pointer-events: none;
+}
 header {
-  width: 100%;
-  height: 102px;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  padding: 33px 40px;
-  box-sizing: border-box;
   position: fixed;
+  background: #043985;
+  z-index: 99;
   top: 0;
-  z-index: 3;
-  img {
-    width: 162.92px;
-    height: 27.19px;
-    margin-top: 5px;
-  }
-  .navBox {
-    display: flex;
-    ul {
-      display: flex;
-      margin-top: 5px;
-      li {
-        margin: 0 22px;
-        font-size: 22px;
-        color: #fff;
-        &:hover {
-          a {
-            color: $activeColor;
-          }
-          .el-dropdown {
-            color: $activeColor;
-          }
-        }
-        a {
-          text-decoration: none;
-          color: #fff;
-        }
-        .nuxt-link-exact-active {
-          color: $activeColor;
-        }
-        .el-dropdown {
-          color: #fff;
-          font-size: 22px;
-        }
-      }
-      // .service {
-      //   a {
-      //     &:hover {
-      //       color: red;
-      //     }
-      //   }
-      // }
-    }
-    .btnBox {
-      margin-left: 21px;
-      button {
-        height: 36px;
-        width: 95px;
-        padding-top: 10px;
-      }
-      .login {
-        color: $activeColor;
-      }
-      .register {
-        background: $activeColor;
-      }
-    }
-  }
+  left: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.5);
 }
-.el-dropdown-menu {
-  width: 100%;
-  height: 303px;
-  background: #000;
-  top: 102px !important;
-  left: 0 !important;
-  border: none;
-  box-shadow: inherit;
-  border-radius: 0px;
-  padding: 0;
+.navbar-brand {
+  display: inline-block;
+  padding: 16px 14px;
 }
-.el-popper {
-  margin: 0;
+.header .navbar-brand {
+  float: left;
+  background-color: #fa541c;
 }
-.screen {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 50px 0 75px 0;
-  box-sizing: border-box;
-  .service_box {
-    margin-left: 828px;
-    margin-right: 208px;
-    @include productCss();
-  }
-  .production_box {
-    @include productCss();
-  }
+.header .navbar-brand img {
+  height: 32px;
+  width: 152px;
+  vertical-align: middle;
+  border-style: none;
 }
-
-.nuxt-link-exact-active {
-  color: $activeColor;
+.menu {
+  float: right;
 }
-
-/deep/ .el-icon-arrow-left {
-  font-size: 39px;
-  color: #a7a7a7;
+.menu li {
+  float: left;
+  padding: 24px 17px;
+  font-size: 15px;
+  cursor: pointer;
 }
-/deep/ .el-icon-arrow-right {
-  font-size: 39px;
-  color: #a7a7a7;
+.nav-down ul li {
+  margin-left: 50%;
+  transform: translateX(-25%);
 }
-
-/deep/ .el-dropdown-menu__item {
-  padding: 0;
-  a {
-    color: #fff;
-    &:hover {
-      color: $activeColor;
-    }
-  }
-}
-
-/deep/ .el-dropdown-menu__item:focus,
-.el-dropdown-menu__item:not(.is-disabled):hover {
-  color: $activeColor;
-  background: #000;
-}
-/deep/ .popper__arrow {
+.more {
   display: none;
+  float: right;
+  margin-right: 15px;
+  margin-top: 15px;
+  border: 1px solid #cccccc;
+  padding: 10px;
+}
+.nav-down {
+  z-index: 100;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: #043985;
+  color: rgba(255, 255, 255, 0.5);
+}
+.downmenu li {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+header li:hover,
+.nav-down li:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+@media screen and (max-width: 767px) {
+  .menu,
+  .language {
+    display: none;
+  }
+  .more {
+    display: block;
+  }
+}
+@media screen and (min-width: 767px) {
+  .nav-down {
+    display: none;
+  }
+}
+@media screen and (max-width: 496px) {
+  .header .navbar-brand {
+    float: left;
+    background-color: #043985;
+  }
+  .downmenu {
+    border-top: 1px solid #fff;
+    height: 181px;
+  }
+  .nav-down {
+    overflow: hidden;
+    animation: mymove 0.5s;
+  }
+  @keyframes mymove {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 181px;
+    }
+  }
 }
 </style>
