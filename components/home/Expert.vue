@@ -14,31 +14,7 @@ export default {
   name: 'Partner',
   data () {
     return {
-      list: [{
-        id: 1,
-        url: 'https://img.baitton.com/zjzk-1.jpg'
-      }, {
-        id: 2,
-        url: 'https://img.baitton.com/zjzk-2.jpg'
-      }, {
-        id: 3,
-        url: 'https://img.baitton.com/zjzk-3.jpg'
-      }, {
-        id: 4,
-        url: 'https://img.baitton.com/zjzk-4.jpg'
-      }, {
-        id: 5,
-        url: 'https://img.baitton.com/zjzk-5.jpg'
-      }, {
-        id: 6,
-        url: 'https://img.baitton.com/zjzk-6.jpg'
-      }, {
-        id: 7,
-        url: 'https://img.baitton.com/zjzk-7.jpg'
-      }, {
-        id: 8,
-        url: 'https://img.baitton.com/zjzk-8.jpg'
-      }]
+      list: []
     }
   }
 }

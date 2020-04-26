@@ -20,7 +20,7 @@ export default {
 </script>
 <style scoped>
 .container {
-  background-image: url("https://img.baitton.com/office.jpg");
+  /* background-image: url("https://img.baitton.com/office.jpg"); */
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;

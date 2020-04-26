@@ -14,61 +14,7 @@ export default {
   name: 'Partner',
   data () {
     return {
-      list: [{
-        id: 1,
-        url: 'https://img.baitton.com/logo-1.jpg'
-      }, {
-        id: 2,
-        url: 'https://img.baitton.com/logo-2.jpg'
-      }, {
-        id: 3,
-        url: 'https://img.baitton.com/logo-3.jpg'
-      }, {
-        id: 4,
-        url: 'https://img.baitton.com/logo-4.jpg'
-      }, {
-        id: 5,
-        url: 'https://img.baitton.com/logo-5.jpg'
-      }, {
-        id: 6,
-        url: 'https://img.baitton.com/logo-6.jpg'
-      }, {
-        id: 7,
-        url: 'https://img.baitton.com/logo-7.jpg'
-      }, {
-        id: 8,
-        url: 'https://img.baitton.com/logo-8.jpg'
-      }, {
-        id: 9,
-        url: 'https://img.baitton.com/logo-9.jpg'
-      }, {
-        id: 10,
-        url: 'https://img.baitton.com/logo-10.jpg'
-      }, {
-        id: 11,
-        url: 'https://img.baitton.com/logo-11.jpg'
-      }, {
-        id: 12,
-        url: 'https://img.baitton.com/logo-12.jpg'
-      }, {
-        id: 13,
-        url: 'https://img.baitton.com/logo-13.jpg'
-      }, {
-        id: 14,
-        url: 'https://img.baitton.com/logo-14.jpg'
-      }, {
-        id: 15,
-        url: 'https://img.baitton.com/logo-15.jpg'
-      }, {
-        id: 16,
-        url: 'https://img.baitton.com/logo-16.jpg'
-      }, {
-        id: 17,
-        url: 'https://img.baitton.com/logo-17.jpg'
-      }, {
-        id: 18,
-        url: 'https://img.baitton.com/logo-18.jpg'
-      }]
+      list: []
     }
   }
 }

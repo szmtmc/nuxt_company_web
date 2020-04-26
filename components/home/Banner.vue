@@ -2,12 +2,12 @@
   <div class="banner-wrap">
     <div class="wrapper">
       <el-carousel :interval="5000" arrow="hover" height="780px">
-        <el-carousel-item v-for="item in picArr" :key="item.id">
+        <el-carousel-item v-for="item in bannerList" :key="item.id">
           <div class="imgwrapepr">
             <div class="banner-info">
               <h1>{{item.h1}}</h1>
             </div>
-            <img :src="item.pic_url" />
+            <img :src="item.url" />
           </div>
         </el-carousel-item>
       </el-carousel>
@@ -17,29 +17,8 @@
 
 <script>
 export default {
-  data () {
-    return {
-      picArr: [
-        {
-          id: 201910111,
-          title: "固定1",
-          h1: '构建战略级科技服务的生态系统',
-          pic_url: "https://img.baitton.com/slide-1.jpg"
-        },
-        {
-          id: 201910112,
-          title: "固定2",
-          h1: '成功源于共享 创新成就未来',
-          pic_url: "https://img.baitton.com/slide-2.jpg"
-        },
-        {
-          id: 201910113,
-          title: "固定3",
-          h1: '拓知共行 服务至上',
-          pic_url: "https://img.baitton.com/slide-3.jpg"
-        }
-      ]
-    };
+  props: {
+    bannerList: Array
   }
 };
 </script>
