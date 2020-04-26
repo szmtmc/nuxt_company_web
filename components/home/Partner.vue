@@ -3,7 +3,7 @@
     <h2 class="text-center">合作伙伴</h2>
     <p class="text-center">很荣幸，能与众多行业优秀客户共同成长</p>
     <div class="row">
-      <div class="item" v-for="item in list" :key="item.id">
+      <div class="item" v-for="item in partnerList" :key="item.id">
         <img class="w-100" :src="item.url" />
       </div>
     </div>
@@ -12,10 +12,8 @@
 <script>
 export default {
   name: 'Partner',
-  data () {
-    return {
-      list: []
-    }
+  props: {
+    partnerList: Array
   }
 }
 </script>
@@ -35,6 +33,7 @@ export default {
 }
 .row {
   width: 1175px;
+  padding-top: 10px;
   margin: 0 auto;
   display: -ms-flexbox;
   display: flex;

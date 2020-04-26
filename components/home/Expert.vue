@@ -3,7 +3,7 @@
     <h2 class="text-center">专家智库</h2>
     <p class="text-center">很自豪，能为各领域的发展提供满意方案</p>
     <div class="row">
-      <div class="item" v-for="item in list" :key="item.id">
+      <div class="item" v-for="item in expertList" :key="item.id">
         <img class="w-100" :src="item.url" />
       </div>
     </div>
@@ -12,10 +12,8 @@
 <script>
 export default {
   name: 'Partner',
-  data () {
-    return {
-      list: []
-    }
+  props: {
+    expertList: Array
   }
 }
 </script>
@@ -45,7 +43,8 @@ export default {
 img {
   width: 240px;
   height: 240px;
-  padding: 30px 30px 0 10px;
+  border-radius: 50%;
+  margin: 30px 30px 0 10px;
 }
 @media screen and (max-width: 1175px) {
   .row {

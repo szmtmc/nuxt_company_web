@@ -5,8 +5,8 @@
     <Product :list="list1"></Product>
     <Product :list="list2"></Product>
     <Product :list="list3"></Product>
-    <Partner></Partner>
-    <Expert></Expert>
+    <Partner :partnerList="partnerList"></Partner>
+    <Expert :expertList="expertList"></Expert>
     <Join></Join>
   </div>
 </template>
@@ -29,13 +29,16 @@ export default {
   },
   data () {
     return {
+      bannerList: [],
       list1: [],
       list2: [],
-      list3: []
+      list3: [],
+      partnerList: [],
+      expertList: []
     }
   },
   mounted () {
-     axios.get(url.bannerLists).then(res => {
+    axios.get(url.bannerLists).then(res => {
       this.bannerList = res.data.img
     })
     axios.get(url.productLists).then(res => {
@@ -46,6 +49,12 @@ export default {
     })
     axios.get(url.productLists).then(res => {
       this.list3 = res.data.list
+    })
+    axios.get(url.partnerList).then(res => {
+      this.partnerList = res.data.list
+    })
+    axios.get(url.expertList).then(res => {
+      this.expertList = res.data.list
     })
   },
   layout: 'default',
