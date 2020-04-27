@@ -24,7 +24,7 @@ import url from '../middleware/api'
 export default {
   head () {
     return {
-      title: '首页-百拓共享'
+      title: '首页-公司名称'
     }
   },
   data () {

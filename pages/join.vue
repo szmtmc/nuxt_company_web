@@ -17,7 +17,7 @@ import Join from '~/components/home/Join'
 export default {
   head () {
     return {
-      title: '加入我们-百拓共享'
+      title: '加入我们-公司名称'
     }
   },
   data () {

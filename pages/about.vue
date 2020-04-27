@@ -15,14 +15,14 @@ import Main from '~/components/about/Main'
 export default {
   head () {
     return {
-      title: '关于百拓-百拓共享'
+      title: '关于公司-公司名称'
     }
   },
   data () {
     return {
       list: [{
         id: 2,
-        h2: '关于百拓',
+        h2: '关于公司',
         p: '我们着眼未来，相信前程似锦'
       }]
     }

@@ -14,7 +14,7 @@ import ContactItem from '~/components/contact/ContactItem'
 export default {
   head () {
     return {
-      title: '联系我们-百拓共享'
+      title: '联系我们-公司名称'
     }
   },
   data () {
