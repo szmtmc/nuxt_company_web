@@ -2,13 +2,13 @@
   <div class="container">
     <p>
       <small>
-        Copyright © 2013-2020 BAITTON
+        Copyright © 2013-2020 COMPANY
         <sup>®</sup>
         All rights reserved.
         <a
           href="https://www.beian.miit.gov.cn/"
           target="_blank"
-        >粤ICP备18084210号-1</a>
+        >粤ICP备xxxxxxx号-x</a>
       </small>
     </p>
   </div>
