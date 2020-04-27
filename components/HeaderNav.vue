@@ -9,7 +9,7 @@
         <ul class="menu clear">
           <nuxt-link tag="li" to="/" :class="{fff:navindex===0}">首页</nuxt-link>
           <nuxt-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</nuxt-link>
-          <nuxt-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</nuxt-link>
+          <nuxt-link tag="li" to="/about" :class="{fff:navindex===2}">关于公司</nuxt-link>
           <nuxt-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</nuxt-link>
           <nuxt-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</nuxt-link>
         </ul>
@@ -36,7 +36,7 @@
       <ul class="downmenu clear">
         <nuxt-link tag="li" to="/" :class="{fff:navindex===0}">首页</nuxt-link>
         <nuxt-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</nuxt-link>
-        <nuxt-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</nuxt-link>
+        <nuxt-link tag="li" to="/about" :class="{fff:navindex===2}">关于公司</nuxt-link>
         <nuxt-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</nuxt-link>
         <nuxt-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</nuxt-link>
       </ul>
