@@ -7,11 +7,11 @@
           <!-- <img height="32" src="../../assets/image/logo.png" /> -->
         </a>
         <ul class="menu clear">
-          <router-link tag="li" to="/" :class="{fff:navindex===0}">首页</router-link>
-          <router-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</router-link>
-          <router-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</router-link>
-          <router-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</router-link>
-          <router-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</router-link>
+          <nuxt-link tag="li" to="/" :class="{fff:navindex===0}">首页</nuxt-link>
+          <nuxt-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</nuxt-link>
+          <nuxt-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</nuxt-link>
+          <nuxt-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</nuxt-link>
+          <nuxt-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</nuxt-link>
         </ul>
         <span class="more" @click="downmenuClick()">
           <div class="icon-twrap" p-id="599">
@@ -34,11 +34,11 @@
     </header>
     <nav class="nav-down" v-show="downmenuShow">
       <ul class="downmenu clear">
-        <router-link tag="li" to="/" :class="{fff:navindex===0}">首页</router-link>
-        <router-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</router-link>
-        <router-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</router-link>
-        <router-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</router-link>
-        <router-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</router-link>
+        <nuxt-link tag="li" to="/" :class="{fff:navindex===0}">首页</nuxt-link>
+        <nuxt-link tag="li" to="/business" :class="{fff:navindex===1}">业务&服务</nuxt-link>
+        <nuxt-link tag="li" to="/about" :class="{fff:navindex===2}">关于百拓</nuxt-link>
+        <nuxt-link tag="li" to="/join" :class="{fff:navindex===3}">加入我们</nuxt-link>
+        <nuxt-link tag="li" to="/contact" :class="{fff:navindex===4}">联系我们</nuxt-link>
       </ul>
     </nav>
   </div>
