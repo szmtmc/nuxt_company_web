@@ -1,26 +1,35 @@
-# nuxt-company_web
+# nuxt_company_web
 
-> My superior Nuxt.js project
+## 项目背景
+> 这是一个使用了Nuxt+Vue+CSS3的个人开源项目,最开始是为了制作公司的官网,后来官网使用了别的技术栈完成,所以将此项目开源。
+预览地址在 [Vue官网](http://bt.soaz.xyz/) ,使用服务端渲染的请clone本项目,使用了mock.js对图片和文本进行数据获取.
 
-## Build Setup
+## 功能介绍
+> 本项目包含基本的官网结构,有主页,业务服务,关于公司,加入我们,联系我们五个模块。后续可根据自己的需求再做增加修改删除页面。
+
+## 安装
 
 ``` bash
 # install dependencies
-$ npm run install
+npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# serve with hot reload at localhost:8080
+npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+# build for production with minification
+npm run build
 
-# generate static project
-$ npm run generate
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## 相关项目
+> 使用了Vue版本的浏览[Vue_company_web](https://github.com/shaozhun/vue_company_web)
 
+## 问题反馈
+在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 
-## 使用了Vue版本的浏览[Vue_company_web](https://github.com/shaozhun/vue_company_web)
+* 邮件(shaozhun1998#163.com, 把#换成@)
+* 微信:xiemeet
+
 
